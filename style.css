@@ -1,0 +1,154 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: linear-gradient(135deg, #c9d6ff, #e2e2e2);
+    --text: #172033;
+    --selection-bg: #6475c7;
+    --selection-text: #ffffff;
+    --card-bg: rgba(255, 255, 255, 0.55);
+    --card-border: rgba(255, 255, 255, 0.7);
+    --shadow: rgba(0, 0, 0, 0.15);
+
+    --start-hover-bg: rgba(46, 204, 113, 0.25);
+    --start-hover-border: rgba(46, 204, 113, 0.5);
+    --stop-hover-bg: rgba(231, 76, 60, 0.25);
+    --stop-hover-border: rgba(231, 76, 60, 0.5);
+    --reset-hover-bg: rgba(241, 196, 15, 0.25);
+    --reset-hover-border: rgba(241, 196, 15, 0.5);
+}
+
+.dark {
+    --bg: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    --text: #f1f5f9;
+    --selection-bg: #8b7fd1;
+    --selection-text: #ffffff;
+    --card-bg: rgba(255, 255, 255, 0.08);
+    --card-border: rgba(255, 255, 255, 0.15);
+    --shadow: rgba(0, 0, 0, 0.4);
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100vh;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    transition: background 0.9s ease-in-out, color 0.9s ease-in-out;
+}
+
+::selection {
+    background: var(--selection-bg);
+    color: var(--selection-text);
+}
+
+/* Header Section */
+header {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#theme-toggle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    color: var(--text);
+    font-size: 1.5rem;
+    cursor: pointer;
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+#theme-toggle:active {
+    transform: scale(0.95);
+}
+
+/* Card & Stopwatch Layout */
+.c {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+#display {
+    font-family: monospace;
+    font-size: 4rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Base Controls */
+.c button {
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(10px);
+    padding: 12px 28px;
+    border-radius: 12px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.c button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--shadow);
+}
+
+.c button:active {
+    transform: translateY(1px);
+}
+
+/* Action Variations */
+#start:hover {
+    background: var(--start-hover-bg);
+    border-color: var(--start-hover-border);
+}
+
+#stop:hover {
+    background: var(--stop-hover-bg);
+    border-color: var(--stop-hover-border);
+}
+
+#reset:hover {
+    background: var(--reset-hover-bg);
+    border-color: var(--reset-hover-border);
+}
+
+
+

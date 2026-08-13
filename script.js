@@ -45,6 +45,9 @@ function startF() {
     interval = setInterval(display, 150)
 }
 function stopF() {
+    if (started === false){
+        return;
+    }
     stopTime = Date.now()
     started = false;
     clearInterval(interval);
